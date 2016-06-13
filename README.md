@@ -1,25 +1,26 @@
 # ButterKnifeDemo
 ##这是我的一个ButterKnifeDemo简易Demo
 ###1.导入ButterKnife
-直接点击项目按F4,搜索新的Library dependency,在里面搜索ButterKnife,选择最新版,
-然后就像导入Design包一样,导入了ButterKnife包
+直接点击项目按F4,搜索新的Library dependency,在里面搜索ButterKnife,选择最新版,然后就像导入Design包一样,导入了ButterKnife包
 ###2.使用ButterKnife
+
 最新的ButterKnife只需要bind不需要unbind,所以在setContentView下ButterKnife.bind()即可.
+
 这上面有更多的ButterKnife的用法:
+
 [ButterKnife](http://jakewharton.github.io/butterknife) 
 ###3.快捷使用bindView,Onclick
+
 在setContentView下右键选择Generate ,再选择Generate Butterknife Injections ,
+
 快捷键是Ctrl+Shift+B,让你选择当前布局下可以BindView的所有控件,和可以Bind点击事件的所有控件
 ###4.贴代码
 ```javasscript
-    @BindView(R.id.title)
-    TextView mTitle;
-    @BindView(R.id.btn1)
-    Button mBtn1;
-    @BindView(R.id.subject)
-    TextView mSubject;
-    @BindView(R.id.btn2)
-    Button mBtn2;
+    //bind布局文件中的控件
+    @BindViews({R.id.title, R.id.subject})
+    TextView mTitle, mSubject;
+    @BindViews({R.id.btn1, R.id.btn2})
+    Button mBtn1, mBtn2;
     @BindView(R.id.img)
     ImageView mImg;
 
@@ -27,11 +28,12 @@
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //bind绑定到当前的Activity
         ButterKnife.bind(this);
 
     }
 
+    //绑定控件的监听方法
     @OnClick({R.id.btn1, R.id.btn2})
     public void click(View view) {
         int id = view.getId();
@@ -47,3 +49,7 @@
         }
     }
 ```    
+##总结
+ButterKnife是一个非常方便的第三方框架,可以减少在项目开发中的findById出现在次数,简化了代码的书写,
+不过Android最新的技术Data Binding的出现,比ButterKnife更加方便,可以直接在Module中与控件绑定,
+不需要像以前在代码中将值setXXX显示的控件中了.
