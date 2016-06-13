@@ -6,7 +6,7 @@
 ###2.使用ButterKnife
     最新的ButterKnife只需要bind不需要unbind,所以在setContentView下ButterKnife.bind()即可.
     这上面有更多的ButterKnife的用法:
-    [ButterKnife](http://jakewharton.github.io/butterknife/) 
+    [ButterKnife](http://jakewharton.github.io/butterknife) 
 ###3.快捷使用bindView,Onclick
     在setContentView下右键选择Generate ,再选择Generate Butterknife Injections ,
     快捷键是Ctrl+Shift+B,让你选择当前布局下可以BindView的所有控件,和可以Bind点击事件的所有控件
