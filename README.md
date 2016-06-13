@@ -51,5 +51,7 @@
 ```    
 ##总结
 ButterKnife是一个非常方便的第三方框架,可以减少在项目开发中的findById出现在次数,简化了代码的书写,
-不过Android最新的技术Data Binding的出现,比ButterKnife更加方便,可以直接在Module中与控件绑定,
-不需要像以前在代码中将值setXXX显示的控件中了.
+不过Android最新的技术Data Binding的出现,比ButterKnife更加方便,可以直接在布局中中与Module中的属性绑定,
+不需要像以前在代码中将值setXXX显示,然后才能显示控件中,它可以在对象数据更新的时候直接更新在绑定的控件上.
+同时在Module中可以有点击事件的方法,在对应的控件的onclick属性中写上即可.
+[Data Bding相关参考](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0603/2992.html)
